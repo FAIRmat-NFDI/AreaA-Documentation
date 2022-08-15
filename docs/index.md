@@ -5,7 +5,7 @@ title: Overview
 
 # What is the purpose of Area A?
 
-<div style="width: 80%; margin: atuo; background-color: lightgrey; text-align:justify;">Area A of the <a href="https://www.fairmat-nfdi.eu/fairmat/consortium">FAIRmat Consortium</a> aims at making sample synthesis reproducible, finding hidden synthesis parameters, accelerating the development of novel materials by devising synthesis recipes, and making characterization data of synthesized materials assessable.</div>
+<div style="width: 80%; margin: atuo; background-color: lightgrey; text-align:justify; padding:20px;">Area A of the <a href="https://www.fairmat-nfdi.eu/fairmat/consortium">FAIRmat Consortium</a> aims at making sample synthesis reproducible, finding hidden synthesis parameters, accelerating the development of novel materials by devising synthesis recipes, and making characterization data of synthesized materials assessable.</div>
 
 
 ## a bit more in detail
