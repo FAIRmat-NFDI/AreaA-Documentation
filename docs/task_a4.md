@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Task A4 - Synthesis by assembly
+title: Synthesis by assembly
 ---
 
 # A4: Synthesis by Assembly
