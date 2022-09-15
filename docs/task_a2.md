@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Task A2
+title: Synthesis from Gas Phase
 ---
 
 # A2: Synthesis from Gas Phase
