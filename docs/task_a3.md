@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Task A3
+title: Synthesis from Solid Phase/Solution
 ---
 
 # A3: Synthesis from Solid Phase and Solution
