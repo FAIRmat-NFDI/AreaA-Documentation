@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Task A1
+title: Synthesis from Melt
 ---
 
 # A1: Synthesis from Melt
