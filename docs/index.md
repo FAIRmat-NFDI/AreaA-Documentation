@@ -17,7 +17,7 @@ Here we can put links to the FAIRmat pages, direct to coordinators etc...
 
 # The four tasks of Area A
 
-- [Task A1](task_a1.html)
-- [Task A2](task_a2.html)
-- [Task A3](task_a3.html)
-- [Task A4](task_a4.html)
+- [Task A1: Synthesis from Melt](task_a1.html)
+- [Task A2: Synthesis from Gas Phase](task_a2.html)
+- [Task A3: Synthesis from Gas Phase](task_a3.html)
+- [Task A4: Synthesis by assembly](task_a4.html)
