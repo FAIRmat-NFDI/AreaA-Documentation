@@ -1,0 +1,61 @@
+# FAIRmat tutorials planning  
+- **speakers**: Area A internal?!  
+- **Date:** Mar 15th, 2023 afternoon?!  
+- **concept:**  
+  - live tutorial!  
+  - tutorial should be useful for Area A training activities --> new NOMAD users, data stewards,  
+  - have the resulting youtube video in mind, which should be atractive to watch later on!  
+  - ...  
+- **target audience:** NOMAD users (scientists) and data stewards?  
+- **content:**   
+  what content could we provide?  
+  - stress Oasis in NOMAD Oasis  
+  - data revision  
+  - data modeling  
+  - data schema writing based on custom schema  
+  - using schema in ELN  
+    - functionalities:  
+      - base classes  
+      - general workflow outline: tasks, inputs&outputs, etc  
+      - sample ID  
+      - user  
+      - csv+xlsx parser, maybe also other parsers? probably  
+      - flexibility of tasks: + button to add new taks flexibly  
+      - referencing to data files (+ in other uploads) e.g. inventory of substrates  
+      - referencing to other schema files --> tasks  
+      - automatic plots  
+      - ...  
+    - inventory  
+    - organizing schemas  
+    - ...  
+  - ...  
+- **parts or sections of tutorial**   
+  idealy we break down the content in sections of ~10min, better for youtube videos later  
+  - about this tutorial: overview, targeted audience, goals  
+  - definitions: what is a schema, a template? how do schema and data file work together?  
+  - demo of a simple schema and or demo of our general workflow schema:  
+    - create upload and add files (schema, data, raw files), idea/strucuture of upload folder, manage access etc. add readme.md, publish  
+    - instantiate an entry  
+      - by data file  
+      - by entering name and choose schema  
+    - navigate into entry:  
+      - explain sections: overview, files, data, log  
+      - entry references  
+    - fll out entry manually and by dropping a file which gets parsed an populates quantities  
+    - demo of:  
+      - sample ID  
+      - referencing to data files or instantiate data files if not existing  
+      - ...  
+    - ...  
+  - write schema file  
+    - how complex can we go here? Audience is rather data stewards or people with data skills  
+  - ...  
+- **Hands on tutorial:**  
+  - replay what was shown in tutorial before:  
+    - create an upload by schema and example file and fill in data test different functionalities  
+  - write or extend an existing schema  
+  - ...  
+  -  
+  -  
+  -  
+-  
