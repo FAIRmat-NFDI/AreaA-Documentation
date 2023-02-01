@@ -7,6 +7,9 @@
   - have the resulting youtube video in mind, which should be atractive to watch later on!  
   - ...  
 - **target audience:** NOMAD users (scientists) and data stewards?  
+- **goals**
+  - have a good own documentation so we can point new user to it before meeting with us.So we save time and repeat ourselves less
+  - Explain concept of an ELN that is based on structured data in contrast to the standard ELN s
 - **content:**   
   what content could we provide?  
   - stress Oasis in NOMAD Oasis  
