@@ -51,14 +51,15 @@
       - entry references  
     - fill out entry manually and by dropping a file which gets parsed an populates quantities  
     - normalization functionality
+    - seperate files (specified in more advanced)
     - search your data (not results section)
   
-  - write schema file 
+  - write schema file --> Hampus
     - what is yaml file, intendations
     - add one section with one quantity
     - upload and test it --> 
     - which quanities do we have? 
-  - more advanced usage of NOMAD:
+  - more advanced usage of NOMAD: --> Hampus
 
     - xlsx parser (15min)
     - plotting  (15min)
