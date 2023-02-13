@@ -1,0 +1,29 @@
+data:  
+  m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Experiment 
+  tasks: 
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Substrate_preparation
+    name: Substrate_preparation
+    tasks:
+      - name: step 1
+      - name: step 2
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Substrate_cutting
+    name: Substrate_cutting
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Mbe_process
+    name: Mbe_process
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Growth_recipe
+    name: Growth_recipe
+    data_file: Rezept.xlsx
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Growth_process
+    name: Growth_process
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Calibration_date_sources
+    name: Calibration_date_sources
+  # - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#Growth_log
+  #   name: Growth_log
+  #   data_file: Ge_001_UC_DIK_01_014.csv 
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#HRXRD_measurement
+    name: HR XRD Characterization
+  - m_def: ../upload/raw/mbe_SiGe.schema.archive.yaml#AFM_measurement
+    name: AFM Characterization
+  inputs:
+    - name: my substrate
+      section: ../upload/raw/Substrate.data.archive.yaml#data
