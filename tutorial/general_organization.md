@@ -16,11 +16,12 @@
 **schedule:**
 | Section | Speaker | time | comment/content |
 | - | - | - | - |
-| 1. introduction + definitions | Andrea |
-| 2. NOMAD usage  | Florian |  |  |
+| 1. introduction + definitions | Andrea & Sebastian |
+| 1b  structured data/information (user, global etc, inheritance) --> the key points | Andrea & Sebastian |
+| 2. NOMAD usage, UX (not the structure)  | Florian |  |  |
 | 3. data revision + write schema | Hampus |  | |
 | 4. more advanced usage: xlsx + plotting | Andrea | - | - |
-| 5. more advanced usage: base classes + referencing | Hampus | | |
+| 5. more advanced usage: base classes functionality + referencing | Hampus | | |
 | 6. explore data | Pepe | | |
 
 **abstract:** structured data, ELN, NOMAD, schema, for scientist (usage), for data stewards (write schemas)  ...
@@ -31,7 +32,7 @@
 * from simple to more complex content, 
 * audience interested scientists to data stewards
 * have resulting YouTube videos in mind as learning resource
-* Q: we could produce videos before and replay and then interact on content in tutorial?
+* Q: we could produce videos before and replay and then interact on content in tutorial? --> post production based on feedback
 
 **deadlines:**
 * [ ] communicate general information to Lucia 15.02.2023 --> Sebastian
@@ -44,7 +45,23 @@
 * use current state of NOMAD develop --> will this go into public beta?
 * Jupyter Hub should be available!?
 * any critical issues or MR to be closed until tutorial?
-* 
+
+**Questions:**
+* examples of tutorial in *documentation* repo? 
+* provide as *example in NOMAD* like Area B stuff? 
+* examples for tutorial: try to keep a *red line* throughout the tutorial
+* examples/uploads are connected
+* define example and then split up and then implement example upload in NOMAD as MR
+* there is a strucuture and a data model this is what people see in the ELN demo, (but is under developement and is taking input from different communities)
+## use case
+* MBE SiGe --> process data!!!
+  * Andrea will place example in tutorial folder 
+* base classes:
+  * sample ID --> result of community discussion
+  * substance 
+  * publication ref.
+  * activity? (method)
+* Andea: Amir needs to implement xlsx-parser things!
 
 Conclusion from our meeting 8.02.2023:
 Content of tutorial:
