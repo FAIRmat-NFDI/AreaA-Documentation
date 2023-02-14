@@ -3,6 +3,7 @@
 **title:** 
 * Electronic lab notebook (ELN) functionality in NOMAD
 * Electronic lab notebook (ELN) functionality in NOMAD for FAIR data
+* Using NOMAD as Electronic lab notebook (ELN) for FAIR data
 
 **date:** 15.03.2023, 14:00 to 17:00 (break at ~15:30)
 
