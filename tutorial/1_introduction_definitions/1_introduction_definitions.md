@@ -23,7 +23,7 @@ This part is based on our Area A FAIRmat user meeting talk.
 
 
 
-## Definitions:
+## Definitions (Sebastian):
 * FAIRmat
 * FAIRmat Area A
 * NOMAD (and NOMAD Oasis)
@@ -31,6 +31,7 @@ This part is based on our Area A FAIRmat user meeting talk.
 * ELN
 * tutorial description
 
+## Definitions (Andrea):
 * structured data
 * yaml file
 * schema
