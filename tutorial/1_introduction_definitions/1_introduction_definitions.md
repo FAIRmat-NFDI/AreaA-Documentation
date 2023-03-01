@@ -29,9 +29,10 @@ This part is based on our Area A FAIRmat user meeting talk.
 * NOMAD (and NOMAD Oasis)
 * RDM
 * ELN
-* tutorial
-* 
+* tutorial description
+
 * structured data
+* yaml file
 * schema
 * template
 * metadata
