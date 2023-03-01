@@ -68,22 +68,47 @@ definitions:
           repeats: true
           section:
             quantities:
+              name:
+                type: str
+                m_annotations:
+                  eln:
+                    component: StringEditQuantity
+                  tabular:
+                    name: step_name
               process_time:
                 type: np.float64
                 unit: s
                 m_annotations:
+                  eln:
+                    component: NumberEditQuantity
                   tabular:
-                  name: process_time
+                    name: process_time
               value:
                 type: np.float64
                 unit: K
                 m_annotations:
+                  eln:
+                    component: NumberEditQuantity
                   tabular:
-                  name: value
+                    name: value
               set_point:
                 type: np.float64
                 unit: K
                 m_annotations:
+                  eln:
+                    component: NumberEditQuantity
                   tabular:
-                  name: set_point
+                    name: set_point
+    MyOverallProcess:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        eln:
+      sub_sections:
+        Process1:
+          section: '#/MyProcess1'
+        Process2:
+          section: '#/MyProcess2'
+
+      
      
