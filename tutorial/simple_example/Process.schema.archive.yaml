@@ -21,7 +21,7 @@ definitions:
             eln:
               component: FileEditQuantity
             tabular_parser:
-              # sep: ','  # needed for csv files
+              sep: ','  
               comment: '#'
               mode: column
         process_time:
@@ -58,13 +58,14 @@ definitions:
             eln:
               component: FileEditQuantity
             tabular_parser:
-              # sep: ','  # needed for csv files
+              sep: ','  
               comment: '#'
               mode: row
               target_sub_section:
                 - MySubProcess
       sub_sections:
         MySubProcess:
+          repeats: true
           section:
             quantities:
               process_time:
