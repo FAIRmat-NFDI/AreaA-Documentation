@@ -1,0 +1,88 @@
+definitions:
+  name: My Custom Schemas
+  sections:
+    MyProcess1:
+      base_sections: 
+        - nomad.parsing.tabular.TableData
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        plot:
+          label: Temperature
+          x: process_time
+          y: 
+            - value
+            - set_point
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+            tabular_parser:
+              # sep: ','  # needed for csv files
+              comment: '#'
+              mode: column
+        process_time:
+          type: np.float64
+          shape: ['*']
+          unit: s
+          m_annotations:
+            tabular:
+              name: process_time
+        value:
+          type: np.float64
+          shape: ['*']
+          unit: K
+          m_annotations:
+            tabular:
+              name: value
+        set_point:
+          type: np.float64
+          shape: ['*']
+          unit: K
+          m_annotations:
+            tabular:
+              name: set_point
+    MyProcess2:
+      base_sections: 
+        - nomad.parsing.tabular.TableData
+        - nomad.datamodel.data.EntryData
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+            tabular_parser:
+              # sep: ','  # needed for csv files
+              comment: '#'
+              mode: row
+              target_sub_section:
+                - MySubProcess
+      sub_sections:
+        MySubProcess:
+          section:
+            quantities:
+              process_time:
+                type: np.float64
+                unit: s
+                m_annotations:
+                  tabular:
+                  name: process_time
+              value:
+                type: np.float64
+                unit: K
+                m_annotations:
+                  tabular:
+                  name: value
+              set_point:
+                type: np.float64
+                unit: K
+                m_annotations:
+                  tabular:
+                  name: set_point
+     
