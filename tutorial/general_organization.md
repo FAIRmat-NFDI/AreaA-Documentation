@@ -17,8 +17,8 @@
 **schedule:**
 | Section | Speaker | time | comment/content |
 | - | - | - | - |
-| 1. introduction + definitions | Andrea & Sebastian |
-| 1b  structured data/information (user, global etc, inheritance) --> the key points | Andrea & Sebastian |
+| 1. introduction + definitions | Sebastian |
+| 1b  structured data/information (user, global etc, inheritance) --> the key points | Andrea |
 | 2. NOMAD usage, UX (not the structure)  | Florian |  |  |
 | 3. data revision + write schema | Hampus |  | |
 | 4. more advanced usage: xlsx + plotting | Andrea | - | - |
