@@ -67,15 +67,7 @@ definitions:
                     defaultDisplayUnit: mm
     MyProcess1:
       base_sections: 
-        - nomad.parsing.tabular.TableData
         - nomad.datamodel.data.EntryData
-      m_annotations:
-        plot:
-          label: Temperature
-          x: process_time
-          y: 
-            - value
-            - set_point
       quantities:
         data_file:
           type: str
@@ -84,40 +76,21 @@ definitions:
               adaptor: RawFileAdaptor
             eln:
               component: FileEditQuantity
-            tabular_parser:
-              sep: ','  
-              comment: '#'
-              mode: column
         process_time:
           type: np.float64
           shape: ['*']
           unit: s
-          m_annotations:
-            tabular:
-              name: process_time
         value:
           type: np.float64
           shape: ['*']
           unit: K
-          m_annotations:
-            tabular:
-              name: value
         set_point:
           type: np.float64
           shape: ['*']
           unit: K
-          m_annotations:
-            tabular:
-              name: set_point
     MyProcess2:
       base_sections: 
-        - nomad.parsing.tabular.TableData
         - nomad.datamodel.data.EntryData
-      m_annotations:
-        plot:
-          label: Temperature
-          x: process_time
-          y: MySubProcess/:/value
       quantities:
         data_file:
           type: str
@@ -126,15 +99,8 @@ definitions:
               adaptor: RawFileAdaptor
             eln:
               component: FileEditQuantity
-            tabular_parser:
-              sep: ','  
-              comment: '#'
-              mode: row
-              target_sub_section:
-                - MySubProcess
       sub_sections:
         MySubProcess:
-          repeats: true
           section:
             quantities:
               name:
@@ -142,32 +108,24 @@ definitions:
                 m_annotations:
                   eln:
                     component: StringEditQuantity
-                  tabular:
-                    name: step_name
               process_time:
                 type: np.float64
                 unit: s
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
-                  tabular:
-                    name: process_time
               value:
                 type: np.float64
                 unit: K
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
-                  tabular:
-                    name: value
               set_point:
                 type: np.float64
                 unit: K
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
-                  tabular:
-                    name: set_point
     MyOverallProcess:
       base_sections:
         - nomad.datamodel.data.EntryData
