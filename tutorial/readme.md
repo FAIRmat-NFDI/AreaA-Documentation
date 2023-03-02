@@ -1,10 +1,10 @@
 **schedule:**
-| Section | Speaker | time | exercise |
+| Section | Speaker |  content/comment |
 | - | - | - | - |
 | 1. introduction + definitions | Sebastian |
-| 1b  structured data/information (user, global etc, inheritance) --> the key points | Andrea |
-| 2. NOMAD usage, UX (not the structure)  | Florian |  |  |
-| 3. data revision + write schema | Hampus |  | |
-| 4. more advanced usage: xlsx + plotting | Andrea | ~ 15 min | parse one column in nomad |
-| 5. more advanced usage: base classes functionality + referencing | Hampus | | |
-| 6. explore data | Pepe | | |
+| 2. structured data/information on Nomad tools | Andrea | the key points, concepts, vocabulary used in the tutorial |
+| 3. NOMAD usage, UX (not the structure)  | Florian |   |
+| 4. data revision + write schema | Hampus |  |
+| 5. more advanced usage: xlsx + plotting | Andrea |  exercise: parse one column in nomad |
+| 6. more advanced usage: base classes functionality + referencing | Hampus |  |
+| 7. explore data | Pepe | | 
