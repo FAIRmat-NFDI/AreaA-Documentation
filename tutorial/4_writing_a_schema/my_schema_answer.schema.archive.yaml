@@ -4,6 +4,11 @@ definitions:
     MySubstrate:
       base_section: nomad.datamodel.data.EntryData
       quantities:
+        name: 
+          type: str
+          m_annotations:
+            eln:
+              component: StringEditQuantity
         lab_id:
           type: str
           m_annotations:

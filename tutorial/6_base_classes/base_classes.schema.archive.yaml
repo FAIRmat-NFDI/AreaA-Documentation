@@ -2,23 +2,32 @@ definitions:
   name: My Custom Schemas
   sections:
     MySubstrate:
-      base_section: nomad.datamodel.data.EntryData
+      base_sections: 
+        - nomad.datamodel.data.EntryData
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
       quantities:
-        id:
-          type: str  # Will be changed for inherited quantity in part 4
+        name: 
+          type: str
           m_annotations:
             eln:
               component: StringEditQuantity
+        lab_id:
+          type: str
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+              label: Substrate ID
         material:
-          type: str  # Will be changed for substance quantity in part 4
+          type: nomad.datamodel.metainfo.eln.Substance
           m_annotations:
             eln:
-              component: StringEditQuantity
-        date_recieved:
+              component: ReferenceEditQuantity
+        datetime:
           type: Datetime
           m_annotations:
             eln:
-              component: DateTimeEditQuantity  # Should be DateEditQuantity
+              component: DateTimeEditQuantity
+              label: Date recieved
         doping_type:
           type:
             type_kind: Enum
@@ -35,11 +44,12 @@ definitions:
           m_annotations:
             eln:
               component: NumberEditQuantity
-        comment:
+        description:
           type: str
           m_annotations:
             eln: 
               component: RichTextEditQuantity
+              label: Comment
       sub_sections:
         dimensions:
           section:
@@ -65,46 +75,3 @@ definitions:
                   eln:
                     component: NumberEditQuantity
                     defaultDisplayUnit: mm
-    MyProcess:
-      base_sections: 
-        - nomad.parsing.tabular.TableData
-        - nomad.datamodel.data.EntryData
-      quantities:
-        data_file:
-          type: str
-          m_annotations:
-            tabular_parser:
-              sep: ','
-              mode: column
-            browser:
-              adaptor: RawFileAdaptor
-            eln:
-              component: FileEditQuantity
-        process_time:
-          type: np.float64
-          shape: ['*']
-          unit: s
-          m_annotations:
-            tabular:
-              name: process_time
-        value:
-          type: np.float64
-          shape: ['*']
-          unit: K
-          m_annotations:
-            tabular:
-              name: value
-        set_point:
-          type: np.float64
-          shape: ['*']
-          unit: K
-          m_annotations:
-            tabular:
-              name: set_point
-      m_annotations:
-        plot:
-          label: Temperature
-          x: process_time
-          y: 
-            - value
-            - set_point
