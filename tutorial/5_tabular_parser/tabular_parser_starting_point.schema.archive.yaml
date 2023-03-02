@@ -1,0 +1,141 @@
+definitions:
+  name: My Custom Schemas
+  sections:
+    MySubstrate:
+      base_section: nomad.datamodel.data.EntryData
+      quantities:
+        id:
+          type: str  # Will be changed for inherited quantity in part 4
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        material:
+          type: str  # Will be changed for substance quantity in part 4
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        date_recieved:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity  # Should be DateEditQuantity
+        doping_type:
+          type:
+            type_kind: Enum
+            type_data:
+              - 'n'
+              - 'p'
+              - 'none'
+          m_annotations:
+            eln:
+              component: RadioEnumEditQuantity
+        doping:
+          type: np.float64
+          unit: ohm*cm
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+        comment:
+          type: str
+          m_annotations:
+            eln: 
+              component: RichTextEditQuantity
+      sub_sections:
+        dimensions:
+          section:
+            quantities:
+              length:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+              width:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+              height:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+    MyProcess1:
+      base_sections: 
+        - nomad.datamodel.data.EntryData
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+        process_time:
+          type: np.float64
+          shape: ['*']
+          unit: s
+        value:
+          type: np.float64
+          shape: ['*']
+          unit: K
+        set_point:
+          type: np.float64
+          shape: ['*']
+          unit: K
+    MyProcess2:
+      base_sections: 
+        - nomad.datamodel.data.EntryData
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+      sub_sections:
+        MySubProcess:
+          section:
+            quantities:
+              name:
+                type: str
+                m_annotations:
+                  eln:
+                    component: StringEditQuantity
+              process_time:
+                type: np.float64
+                unit: s
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+              value:
+                type: np.float64
+                unit: K
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+              set_point:
+                type: np.float64
+                unit: K
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+    MyOverallProcess:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        eln:
+      sub_sections:
+        Process1:
+          section: '#/MyProcess1'
+        Process2:
+          section: '#/MyProcess2'
+
+      
+     

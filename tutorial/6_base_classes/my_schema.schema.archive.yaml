@@ -1,0 +1,110 @@
+definitions:
+  name: My Custom Schemas
+  sections:
+    MySubstrate:
+      base_section: nomad.datamodel.data.EntryData
+      quantities:
+        id:
+          type: str  # Will be changed for inherited quantity in part 4
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        material:
+          type: str  # Will be changed for substance quantity in part 4
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        date_recieved:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity  # Should be DateEditQuantity
+        doping_type:
+          type:
+            type_kind: Enum
+            type_data:
+              - 'n'
+              - 'p'
+              - 'none'
+          m_annotations:
+            eln:
+              component: RadioEnumEditQuantity
+        doping:
+          type: np.float64
+          unit: ohm*cm
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+        comment:
+          type: str
+          m_annotations:
+            eln: 
+              component: RichTextEditQuantity
+      sub_sections:
+        dimensions:
+          section:
+            quantities:
+              length:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+              width:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+              height:
+                type: np.float64
+                unit: mm
+                m_annotations:
+                  eln:
+                    component: NumberEditQuantity
+                    defaultDisplayUnit: mm
+    MyProcess:
+      base_sections: 
+        - nomad.parsing.tabular.TableData
+        - nomad.datamodel.data.EntryData
+      quantities:
+        data_file:
+          type: str
+          m_annotations:
+            tabular_parser:
+              sep: ','
+              mode: column
+            browser:
+              adaptor: RawFileAdaptor
+            eln:
+              component: FileEditQuantity
+        process_time:
+          type: np.float64
+          shape: ['*']
+          unit: s
+          m_annotations:
+            tabular:
+              name: process_time
+        value:
+          type: np.float64
+          shape: ['*']
+          unit: K
+          m_annotations:
+            tabular:
+              name: value
+        set_point:
+          type: np.float64
+          shape: ['*']
+          unit: K
+          m_annotations:
+            tabular:
+              name: set_point
+      m_annotations:
+        plot:
+          label: Temperature
+          x: process_time
+          y: 
+            - value
+            - set_point
