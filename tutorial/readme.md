@@ -1,6 +1,6 @@
 **schedule:**
 | Section | Speaker |  content/comment |
-| - | - | - | - |
+| - | - | - |
 | 1. introduction + definitions | Sebastian |
 | 2. structured data/information on Nomad tools | Andrea | the key points, concepts, vocabulary used in the tutorial |
 | 3. NOMAD usage, UX (not the structure)  | Florian |   |
