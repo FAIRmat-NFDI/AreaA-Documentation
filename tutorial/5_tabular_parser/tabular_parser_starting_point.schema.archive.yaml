@@ -108,21 +108,15 @@ definitions:
                 m_annotations:
                   eln:
                     component: StringEditQuantity
-              process_time:
+              roughness:
                 type: np.float64
-                unit: s
+                unit: nm
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
-              value:
+              thickness:
                 type: np.float64
-                unit: K
-                m_annotations:
-                  eln:
-                    component: NumberEditQuantity
-              set_point:
-                type: np.float64
-                unit: K
+                unit: nm
                 m_annotations:
                   eln:
                     component: NumberEditQuantity

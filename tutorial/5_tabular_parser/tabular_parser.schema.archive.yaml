@@ -113,11 +113,6 @@ definitions:
       base_sections: 
         - nomad.parsing.tabular.TableData
         - nomad.datamodel.data.EntryData
-      m_annotations:
-        plot:
-          label: Temperature
-          x: process_time
-          y: MySubProcess/:/value
       quantities:
         data_file:
           type: str
@@ -131,43 +126,39 @@ definitions:
               comment: '#'
               mode: row
               target_sub_section:
-                - MySubProcess
+                - MyProcessesCollection
       sub_sections:
-        MySubProcess:
+        MyProcessesCollection:
           repeats: true
           section:
+            more:
+              label_quantity: sample_id
             quantities:
-              name:
+              sample_id:
                 type: str
                 m_annotations:
                   eln:
                     component: StringEditQuantity
                   tabular:
-                    name: step_name
-              process_time:
+                    name: sample_id
+              roughness:
                 type: np.float64
-                unit: s
+                unit: nm
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
+                    defaultDisplayUnit: nm
                   tabular:
-                    name: process_time
-              value:
+                    name: roughness
+              thickness:
                 type: np.float64
-                unit: K
+                unit: nm
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
+                    defaultDisplayUnit: nm 
                   tabular:
-                    name: value
-              set_point:
-                type: np.float64
-                unit: K
-                m_annotations:
-                  eln:
-                    component: NumberEditQuantity
-                  tabular:
-                    name: set_point
+                    name: thickness
     MyOverallProcess:
       base_sections:
         - nomad.datamodel.data.EntryData
