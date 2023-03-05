@@ -2,7 +2,8 @@ definitions:
   name: My Custom Schemas
   sections:
     MySubstrate:
-      base_section: nomad.datamodel.data.EntryData
+      base_sections: 
+        - nomad.datamodel.data.EntryData
       quantities:
         name: 
           type: str
@@ -25,7 +26,7 @@ definitions:
           m_annotations:
             eln:
               component: DateTimeEditQuantity
-              label: Date recieved
+              label: Date received
         doping_type:
           type:
             type_kind: Enum
@@ -39,6 +40,7 @@ definitions:
         doping:
           type: np.float64
           unit: ohm*cm
+          description: The doping of the substrate measured as the electrical resistivity.
           m_annotations:
             eln:
               component: NumberEditQuantity

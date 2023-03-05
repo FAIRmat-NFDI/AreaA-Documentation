@@ -18,7 +18,7 @@ definitions:
               component: StringEditQuantity
               label: Substrate ID
         material:
-          type: nomad.datamodel.metainfo.eln.Substance
+          type: MySubstance
           m_annotations:
             eln:
               component: ReferenceEditQuantity
@@ -41,6 +41,7 @@ definitions:
         doping:
           type: np.float64
           unit: ohm*cm
+          description: The doping of the substrate measured as the electrical resistivity.
           m_annotations:
             eln:
               component: NumberEditQuantity
@@ -51,6 +52,8 @@ definitions:
               component: RichTextEditQuantity
               label: Comment
       sub_sections:
+        substrate_identifiers:
+          section: nomad.datamodel.metainfo.eln.SampleID
         dimensions:
           section:
             quantities:
@@ -75,3 +78,7 @@ definitions:
                   eln:
                     component: NumberEditQuantity
                     defaultDisplayUnit: mm
+    MySubstance:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+        - nomad.datamodel.metainfo.eln.Substance

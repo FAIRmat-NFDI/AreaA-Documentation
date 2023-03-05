@@ -5,6 +5,11 @@ definitions:
       base_sections: 
         - nomad.datamodel.data.EntryData
       quantities:
+        name: 
+          type: str
+          m_annotations:
+            eln:
+              component: StringEditQuantity
         lab_id:
           type: str
           m_annotations:
@@ -21,7 +26,7 @@ definitions:
           m_annotations:
             eln:
               component: DateTimeEditQuantity
-              label: Date received
+              label: Date recieved
         doping_type:
           type:
             type_kind: Enum
