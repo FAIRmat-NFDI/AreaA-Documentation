@@ -1,73 +1,16 @@
 definitions:
   name: My Custom Schemas
   sections:
-    MySubstrate:
-      base_section: nomad.datamodel.data.EntryData
-      quantities:
-        id:
-          type: str  # Will be changed for inherited quantity in part 4
-          m_annotations:
-            eln:
-              component: StringEditQuantity
-        material:
-          type: str  # Will be changed for substance quantity in part 4
-          m_annotations:
-            eln:
-              component: StringEditQuantity
-        date_recieved:
-          type: Datetime
-          m_annotations:
-            eln:
-              component: DateTimeEditQuantity  # Should be DateEditQuantity
-        doping_type:
-          type:
-            type_kind: Enum
-            type_data:
-              - 'n'
-              - 'p'
-              - 'none'
-          m_annotations:
-            eln:
-              component: RadioEnumEditQuantity
-        doping:
-          type: np.float64
-          unit: ohm*cm
-          m_annotations:
-            eln:
-              component: NumberEditQuantity
-        comment:
-          type: str
-          m_annotations:
-            eln: 
-              component: RichTextEditQuantity
-      sub_sections:
-        dimensions:
-          section:
-            quantities:
-              length:
-                type: np.float64
-                unit: mm
-                m_annotations:
-                  eln:
-                    component: NumberEditQuantity
-                    defaultDisplayUnit: mm
-              width:
-                type: np.float64
-                unit: mm
-                m_annotations:
-                  eln:
-                    component: NumberEditQuantity
-                    defaultDisplayUnit: mm
-              height:
-                type: np.float64
-                unit: mm
-                m_annotations:
-                  eln:
-                    component: NumberEditQuantity
-                    defaultDisplayUnit: mm
     MyProcess1:
       base_sections: 
         - nomad.datamodel.data.EntryData
+      m_annotations:
+        plot:
+          - label: Temperature
+            x: process_time
+            y: 
+              - value
+              - set_point
       quantities:
         data_file:
           type: str
@@ -100,10 +43,13 @@ definitions:
             eln:
               component: FileEditQuantity
       sub_sections:
-        MySubProcess:
+        MyProcessesCollection:
+          repeats: true
           section:
+            more:
+              label_quantity: sample_id
             quantities:
-              name:
+              sample_id:
                 type: str
                 m_annotations:
                   eln:
@@ -114,12 +60,14 @@ definitions:
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
+                    defaultDisplayUnit: nm
               thickness:
                 type: np.float64
                 unit: nm
                 m_annotations:
                   eln:
                     component: NumberEditQuantity
+                    defaultDisplayUnit: nm 
     MyOverallProcess:
       base_sections:
         - nomad.datamodel.data.EntryData
@@ -130,6 +78,4 @@ definitions:
           section: '#/MyProcess1'
         Process2:
           section: '#/MyProcess2'
-
-      
-     
+  
