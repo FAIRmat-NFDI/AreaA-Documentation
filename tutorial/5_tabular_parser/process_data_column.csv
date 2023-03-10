@@ -1,4 +1,4 @@
-step_name,process_time,set_point,value
+step_name,process_time,set_temp,meas_temp
 Step 1,0,298,297
 Step 2,1,298,298
 Step 3,2,298,299

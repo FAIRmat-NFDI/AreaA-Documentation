@@ -32,20 +32,20 @@ definitions:
           m_annotations:
             tabular:
               name: process_time
-        value:
+        temperature:
           type: np.float64
           shape: ['*']
           unit: K
           m_annotations:
             tabular:
-              name: value
-        set_point:
+              name: meas_temp
+        set_temperature:
           type: np.float64
           shape: ['*']
           unit: K
           m_annotations:
             tabular:
-              name: set_point
+              name: set_temp
     MyProcess2:
       base_sections: 
         - nomad.parsing.tabular.TableData
