@@ -11,8 +11,8 @@ definitions:
           label: Temperature
           x: process_time
           y: 
-            - value
-            - set_point
+            - temperature
+            - set_temperature
       quantities:
         data_file:
           type: str
