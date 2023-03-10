@@ -1,11 +1,10 @@
 definitions:
   name: My Custom Schemas
   sections:
-    MyProcess1:
+    MyProcessColumn:
       base_sections: 
         - nomad.parsing.tabular.TableData
-        - nomad.datamodel.data.EntryData
-        - nomad.datamodel.metainfo.eln.ElnBaseSection
+        - nomad.datamodel.metainfo.eln.BasicEln
       m_annotations:
         plot:
           label: Temperature
@@ -46,11 +45,10 @@ definitions:
           m_annotations:
             tabular:
               name: set_temp
-    MyProcess2:
+    MyProcessRow:
       base_sections: 
         - nomad.parsing.tabular.TableData
-        - nomad.datamodel.data.EntryData
-        - nomad.datamodel.metainfo.eln.ElnBaseSection
+        - nomad.datamodel.metainfo.eln.BasicEln
       quantities:
         data_file:
           type: str
@@ -99,15 +97,14 @@ definitions:
                     name: thickness
     MyOverallProcess:
       base_sections:
-        - nomad.datamodel.data.EntryData
-        - nomad.datamodel.metainfo.eln.ElnBaseSection
+        - nomad.datamodel.metainfo.eln.BasicEln
       m_annotations:
         eln:
       sub_sections:
         Process1:
-          section: '#/MyProcess1'
+          section: '#/MyProcessColumn'
         Process2:
-          section: '#/MyProcess2'
+          section: '#/MyProcessRow'
 
       
      
