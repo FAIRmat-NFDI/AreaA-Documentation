@@ -4,6 +4,7 @@ definitions:
     MyProcess1:
       base_sections: 
         - nomad.datamodel.data.EntryData
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
       m_annotations:
         plot:
           - label: Temperature
@@ -34,6 +35,7 @@ definitions:
     MyProcess2:
       base_sections: 
         - nomad.datamodel.data.EntryData
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
       quantities:
         data_file:
           type: str
@@ -71,6 +73,7 @@ definitions:
     MyOverallProcess:
       base_sections:
         - nomad.datamodel.data.EntryData
+        - nomad.datamodel.metainfo.eln.ElnBaseSection
       m_annotations:
         eln:
       sub_sections:
