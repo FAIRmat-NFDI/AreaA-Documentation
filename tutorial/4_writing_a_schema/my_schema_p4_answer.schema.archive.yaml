@@ -26,7 +26,7 @@ definitions:
           m_annotations:
             eln:
               component: DateTimeEditQuantity
-              label: Date recieved
+              label: Date received
         doping_type:
           type:
             type_kind: Enum

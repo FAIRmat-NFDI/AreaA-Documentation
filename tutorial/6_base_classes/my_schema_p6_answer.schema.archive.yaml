@@ -3,8 +3,8 @@ definitions:
   sections:
     MySubstrate:
       base_sections: 
-        - nomad.datamodel.data.EntryData
         - nomad.datamodel.metainfo.eln.ElnBaseSection
+        - nomad.datamodel.data.EntryData
       quantities:
         name: 
           type: str
@@ -27,7 +27,7 @@ definitions:
           m_annotations:
             eln:
               component: DateTimeEditQuantity
-              label: Date recieved
+              label: Date received
         doping_type:
           type:
             type_kind: Enum
@@ -80,5 +80,5 @@ definitions:
                     defaultDisplayUnit: mm
     MySubstance:
       base_sections:
-        - nomad.datamodel.data.EntryData
         - nomad.datamodel.metainfo.eln.Substance
+        - nomad.datamodel.data.EntryData
