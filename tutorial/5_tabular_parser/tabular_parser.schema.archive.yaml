@@ -3,8 +3,8 @@ definitions:
   sections:
     MyProcessColumn:
       base_sections: 
-        - nomad.parsing.tabular.TableData
         - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.parsing.tabular.TableData
       m_annotations:
         plot:
           label: Temperature
@@ -47,8 +47,8 @@ definitions:
               name: set_temp
     MyProcessRow:
       base_sections: 
-        - nomad.parsing.tabular.TableData
         - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.parsing.tabular.TableData
       quantities:
         data_file:
           type: str
