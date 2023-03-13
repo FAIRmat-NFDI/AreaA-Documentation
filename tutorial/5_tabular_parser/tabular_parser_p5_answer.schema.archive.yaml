@@ -4,13 +4,18 @@ definitions:
     MyProcessColumn:
       base_sections: 
         - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.parsing.tabular.TableData
       m_annotations:
         plot:
           - label: Temperature
             x: process_time
             y: 
-              - value
-              - set_point
+              - temperature
+              - set_temperature
+          - label: My_test_plot
+            x: process_time
+            y: 
+              - test_quantity
       quantities:
         data_file:
           type: str
@@ -19,21 +24,46 @@ definitions:
               adaptor: RawFileAdaptor
             eln:
               component: FileEditQuantity
+            tabular_parser:
+              sep: ','  
+              comment: '#'
+              mode: column
         process_time:
           type: np.float64
           shape: ['*']
           unit: s
-        value:
+          m_annotations:
+            tabular:
+              name: process_time
+        temperature:
           type: np.float64
           shape: ['*']
           unit: K
-        set_point:
+          m_annotations:
+            tabular:
+              name: meas_temp
+            plot:
+              label: Temperature
+              x: process_time
+              y: temperature
+        set_temperature:
           type: np.float64
           shape: ['*']
           unit: K
+          m_annotations:
+            tabular:
+              name: set_temp
+        test_quantity:
+          type: np.float64
+          shape: ['*']
+          unit: minute
+          m_annotations:
+            tabular:
+              name: test_quantity
     MyProcessRow:
       base_sections: 
         - nomad.datamodel.metainfo.eln.BasicEln
+        - nomad.parsing.tabular.TableData
       quantities:
         data_file:
           type: str
@@ -42,6 +72,12 @@ definitions:
               adaptor: RawFileAdaptor
             eln:
               component: FileEditQuantity
+            tabular_parser:
+              sep: ','  
+              comment: '#'
+              mode: row
+              target_sub_section:
+                - MyProcessesCollection
       sub_sections:
         MyProcessesCollection:
           repeats: true
@@ -54,6 +90,8 @@ definitions:
                 m_annotations:
                   eln:
                     component: StringEditQuantity
+                  tabular:
+                    name: sample_id
               roughness:
                 type: np.float64
                 unit: nm
@@ -61,6 +99,8 @@ definitions:
                   eln:
                     component: NumberEditQuantity
                     defaultDisplayUnit: nm
+                  tabular:
+                    name: roughness
               thickness:
                 type: np.float64
                 unit: nm
@@ -68,6 +108,8 @@ definitions:
                   eln:
                     component: NumberEditQuantity
                     defaultDisplayUnit: nm 
+                  tabular:
+                    name: thickness
     MyOverallProcess:
       base_sections:
         - nomad.datamodel.metainfo.eln.BasicEln
@@ -78,4 +120,6 @@ definitions:
           section: '#/MyProcessColumn'
         Process2:
           section: '#/MyProcessRow'
-  
+
+      
+     
